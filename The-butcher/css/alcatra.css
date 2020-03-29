@@ -1,0 +1,47 @@
+@charset "utf-8";
+
+body {
+	background-color: #590000;
+}
+
+div#interface {
+	box-shadow: 1px 1px 1px 1px #fff490;
+}
+
+article#texto{
+	margin: 10px auto 10px auto;
+	text-align: left;
+	width: 1000px;
+}
+
+article#texto p{
+	font-size: 15pt;
+	margin-top: 0px;
+	font-family: arial,sans-serif;
+}
+
+ul#ingredientes {
+	font-size: 15pt;
+	margin-top: 0px;
+	font-family: arial,sans-serif;
+	list-style: none;
+	
+}
+
+ul#ingredientes li::before {
+	
+	content: "*";
+	color:red;
+}
+
+h1#titulo-principal {
+	background-color: #fff490;
+	padding: 5px;
+	color:#730000;
+	margin: 50px 35px 30px 35px;
+}
+
+img#alcatra-img {
+
+	margin:10px auto 10px 35px;
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<title> Pedido </title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/estilo.css"/>
+	<link rel="stylesheet" type="text/css" href="css/pedido.css"/>
+	<script type="text/javascript" src="javascript/menu.js"> </script>
+	<script type="text/javascript">
+		function calc_total(){
+			var qtd = parseInt(document.getElementById('iQuant').value);
+			tot = qtd * 1500;
+			document.getElementById('iTotal').value= tot;
+		}
+	</script>
+</head>
+<body>
+<div id="interface">
+
+	<header id="cabecalho-principal">
+		<h1>The butcher</h1>
+		<h2>Cortes nobres com atendimento nobre </h2>
+	</header>
+
+		<img src="imagens/t-bone.png" id="icone"/>
+
+		<nav id="menu">
+		<ul>
+			<h1> menu principal </h1>
+			<li onmouseover="mudaFoto('picanha')"       onmouseout="mudaFoto('t-bone')"> <a href="index.html"> Home </a></li>
+			<li onmouseover="mudaFoto('t-bone')"        onmouseout="mudaFoto('t-bone')"> <a href="churrasco.html"> Receitas </a></li>
+			<li onmouseover="mudaFoto('selo-novilho-precoce')"  onmouseout="mudaFoto('t-bone')"> <a href="fornecedor.html"> Fornecedor </a></li>
+			<li onmouseover="mudaFoto('aperto-mao')"    onmouseout="mudaFoto('t-bone')"> <a href="pedido.html"> Pedido </a></li>
+		</ul>
+	</nav>	
+
+	<header id="cabecalho-secundario">
+		<hgroup>
+		<h1> O melhor lugar está aqui ! </h1>
+		<h2> por  Gustavo Blasius > Pedido</h2>   
+		<h3> Atualizado 22/07/2019 </h3>
+		</hgroup>
+	</header>
+
+<form id="formulario-usuario" oninput="calc_total()" method="post" action=" PHP ">
+
+	<fieldset id="usuario"> <legend> Informações do usuário </legend>
+		<p> <label for="iNome"> Nome completo: </label> <input type="text" name="nNome" id="iNome" size="20" maxlength="30" placeholder="Nome Completo"> </p>
+		<fieldset id="sexo"> <legend id="sexo"> Sexo: </legend>
+			<input type="radio" name="nSexo" id="iMasc"/><label for="iMasc"> Masculino </label>
+			<input type="radio" name="nSexo" id="iFem" /><label for="iFem"> Feminino </label>
+		</fieldset> 
+		<p> <label for="iDate"> Data de nascimento: </label>
+		<input type="date" name="nDate" id="iDate"> </p>
+		<p> <label for="iTel"> Telefone: </label>
+		<input type="text" name="nTel" id="iTel" placeholder="(47)9-9999-9999"> </p>
+		<p> <label for="iEmail"> Email: </label> 
+			<input type="text" name="nEmail" id="iEmail" size="20" placeholder="exemplo@tanana.com"></p>
+	</fieldset>
+
+	<fieldset id="localizacao"> <legend> Localização </legend>
+		<p>  <label for="iEstado"> Estado: </label>
+		<select type="text" name="nEstaod" id="iEstado">
+			<optgroup label="Região Sudeste">
+				<option value="SP"> São Paulo </option>
+				<option value="RJ"> Rio de Janeiro </option>
+				<option value="SC" selected> Santa Catarina </option>
+				<option value="RS"> Rio grande do Sul </option>
+			</optgroup>
+			<optgroup label="Região Norte">
+				<option value="AM"> Amazonas </option>
+				<option value="AP"> Amapá</option>
+			</optgroup>
+		 </select> </p>
+
+		<p> <label for="iCida"> Cidade: </label>
+		<input type="text" name="nCida" id="iCida"size="20" maxlength="30" placeholder="Sua cidade" list="cidades">
+		<datalist id="cidades">
+			<option value="Guaramirim"></option>
+			<option value="Jaraguá do sul"></option>
+			<option value="Joinville"></option>
+			<option value="Massaranduba"></option>
+		</datalist> </p>
+		<p><label for="iEnde"> Endereço: </label> 
+			<input type="text" name="nEnde" id="iEnde" placeholder="Rua, Av, Bairro.."></p>
+	</fieldset>
+
+	<fieldset id="mensagem"> <legend> Mensagem do usuário </legend>
+		<p><input type="checkbox" name="nOrc" id="iOrc"> <label for="iOrc">Gostaria de receber um orçamento por e-mail.</label></p>
+		<p> <label> FeedBack </label>
+			<textarea name="nMsg" id="iMsg" cols="40" rows="4" placeholder="Deixe sua mensagem"></textarea></p>
+	</fieldset>
+
+	<fieldset id="pedido"> <legend> Pedido </legend>
+		<p><label> Produto: </label>
+		<select type="text" name="nProd" id="iProd">
+			<optgroup label="BOVINO">
+				<option> Dianteiro </option>
+				<option> Traseiro </option>
+				<option> Miudos </option>
+			</optgroup>
+			<optgroup label="SUINO">
+				<option> Carré </option>
+				<option> Inteiro </option>
+				<option> Pernil </option>
+			</optgroup>
+		</select> </p>
+		<p><label> Quantidade: </label>
+		<input type="number" name="nQuant" id="iQuant" min="0" maxlength="9999"> </p>
+		<p><label> Preço total: </label>
+		<input type="text" name="nTotal" id="iTotal" placeholder="Total a pagar" readonly/> </p>
+	</fieldset>
+
+	
+
+</form>
+	<footer id="rodape">
+
+	 <p> Supermercado Martini 100% Cliente </p>
+
+	    <nav id="link-rodape">
+	    	<a href="https://www.facebook.com/"> Facebook</a>  |  
+	    	<a href="https://www.instagram.com/?hl=pt-br"> Intagram </a> 
+		</nav>
+</footer>
+
+</div>
+</body>
+</html>
